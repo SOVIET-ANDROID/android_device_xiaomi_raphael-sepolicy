@@ -7,6 +7,7 @@ allow hal_lineage_fod_default vendor_sysfs_graphics:file rw_file_perms;
 
 # For interfacing with Xiaomi FingerprintHAL
 allow hal_lineage_fod_default hal_xiaomi_fingerprint_hwservice:hwservice_manager find;
+allow hal_lineage_fod_default hal_touchfeature_hwservice_xiaomi:hwservice_manager find;
 
 # Allow binder communication with hal_fingerprint_default
 binder_call(hal_lineage_fod_default, hal_fingerprint_default)
