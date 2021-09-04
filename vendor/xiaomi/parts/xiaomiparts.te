@@ -18,6 +18,12 @@ hal_client_domain(xiaomiparts, hal_motor)
 
 # Allow xiaomiparts to access touchfeature hal
 hal_client_domain(xiaomiparts, hal_touchfeature)
+binder_call(xiaomiparts, hal_touchfeature_default)
+
+
+# Allow xiaomi_settings to find hal_touchfeature_xiaomi_hwservice
+allow xiaomiparts hal_touchfeature_hwservice:hwservice_manager find;
+
 # Allow xiaomiparts read and write /data/data subdirectory
 allow xiaomiparts system_app_data_file:dir create_dir_perms;
 allow xiaomiparts system_app_data_file:{
